@@ -16,12 +16,18 @@ const adventureClick = document.querySelector(
   ".text-content:nth-of-type(2) h2"
 );
 
-letsGoClick.addEventListener("click", function () {
+letsGoClick.addEventListener("dblclick", function () {
   document.querySelector(".text-content:nth-of-type(2) h2").scrollIntoView();
 });
+letsGoClick.addEventListener("click", function () {
+  letsGoClick.style.backgroundColor = "blue";
+});
 
-adventureClick.addEventListener("click", function () {
+adventureClick.addEventListener("dblclick", function () {
   document.querySelector(".content-destination h2").scrollIntoView();
+});
+adventureClick.addEventListener("click", function () {
+  adventureClick.style.backgroundColor = "green";
 });
 
 const navBar = document.querySelector("header");
@@ -42,8 +48,25 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-const firstImg = document.querySelector(".intro img");
+const welcomeHeader = document.querySelector("#welcomeMsg");
+const destinationHeader = document.querySelector(".content-destination h2");
 
-firstImg.addEventListener("wheel", function () {
-  firstImg.display = "none";
+welcomeHeader.addEventListener("click", function () {
+  welcomeHeader.style.backgroundColor = "purple";
 });
+
+welcomeHeader.addEventListener("dblclick", function () {
+  welcomeHeader.style.backgroundColor = "";
+});
+
+destinationHeader.addEventListener("click", function () {
+  destinationHeader.style.backgroundColor = "yellow";
+});
+
+destinationHeader.addEventListener("dblclick", function () {
+  destinationHeader.style.backgroundColor = "";
+});
+
+const stopButton = document.querySelector("#stop");
+
+stopButton.stopPropagation;
